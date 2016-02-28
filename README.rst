@@ -45,15 +45,15 @@ Mopidy-AdafruitCharLCD to your Mopidy configuration file::
 Project resources
 =================
 
-- `Source code <https://github.com/roywig/mopidy-adafruitcharlcd>`_
-- `Issue tracker <https://github.com/roywig/mopidy-adafruitcharlcd/issues>`_
+- `Source code <https://github.com/RoyWiggins/mopidy-adafruitcharlcd>`_
+- `Issue tracker <https://github.com/RoyWiggins/mopidy-adafruitcharlcd/issues>`_
 
 
 Credits
 =======
 
-- Original author: ` <https://github.com/roywig`__
-- Current maintainer: ` <https://github.com/roywig`__
+- Original author: ` <https://github.com/RoyWiggins`__
+- Current maintainer: ` <https://github.com/RoyWiggins`__
 - `Contributors <https://github.com/roywig/mopidy-adafruitcharlcd/graphs/contributors>`_
 
 
