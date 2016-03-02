@@ -1,12 +1,14 @@
 import pykka
 
 from mopidy import core
+from mopidy.models import Track
 import Adafruit_CharLCD as LCD
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
 print LCD.__file__
 from rotary_class import RotaryEncoder
 import time,random, threading
+
 UP_SWITCH = 17
 DOWN_SWITCH = 18
 
@@ -78,7 +80,7 @@ class RotaryActor(pykka.ThreadingActor):
 			self.lcd.set_cursor(0,1)
 			print "%f coding %s" % (time.clock(), self.current_track.track.name)
 			self.message(self.current_track.track.name.ljust(16))
-
+			print self.current_track
 			if event == RotaryEncoder.BUTTONDOWN:
 				pass
 		elif message.has_key("encode-stopped"):
@@ -102,6 +104,7 @@ class FoobarFrontend(pykka.ThreadingActor, core.CoreListener):
 		self.lcd.clear()
 		self.lcd.message('Mopidy started')
 		self.core.tracklist.set_repeat(True)
+		self.core.tracklist.add([Track(uri="http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p?s",name="Radio One")])
 		self.track = None
 		self.time = None
 
@@ -116,3 +119,4 @@ class FoobarFrontend(pykka.ThreadingActor, core.CoreListener):
 		self.encoder.stop(True)
 		#self.lcd.enable_display(False)
 	# Your frontend implementation
+
